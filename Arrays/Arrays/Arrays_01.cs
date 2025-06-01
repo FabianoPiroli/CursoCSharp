@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace DankiCode
+namespace Arrays
 {
     class Arrays_01
     {
-        static void Main(string[] args)
+        static void Array_01(string[] args)
         {
 
             string[] nomes;
