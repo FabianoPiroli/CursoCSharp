@@ -2,7 +2,7 @@
 
 namespace DankiCode
 {
-    class Program
+    class Arrays_01
     {
         static void Main(string[] args)
         {
@@ -22,7 +22,6 @@ namespace DankiCode
             {
                 Console.WriteLine(nome);
             }
-
         }
     }
 }
