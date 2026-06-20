@@ -1,12 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using ProjetoPratico1.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("Context") ?? throw new InvalidOperationException("Connection string 'Context' not found.");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+builder.Services.AddDbContext<Context>
+    (options => options.UseMySql("Server=localhost; initial catalog=ProjetoPratico1; user id=root; password=fpiroli11081998", 
+    Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.47-mysql")));
 
-//builder.Services.AddDbContext<Context>(options =>
-  //  options.UseMySql)
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
