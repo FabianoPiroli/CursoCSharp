@@ -1,18 +1,19 @@
 @model IEnumerable<ProjetoPratico1.Models.User>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Users";
 }
 
-<h1>Index</h1>
+<h1>Usuários</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Adicionar Usuário</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Id)
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th></th>
@@ -22,6 +23,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(model => item.Id)
                 @Html.DisplayFor(model => item.Name)
             </td>
             <td>
